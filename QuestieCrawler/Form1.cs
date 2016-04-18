@@ -97,8 +97,12 @@ namespace QuestieCrawler
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Database.DB.WriteLua(@"D:\World of Warcraft Classic DEV ENVIROMENT\Interface\AddOns\!Questie\Database\");
-            Database.DB.WriteCon("D:/");
+            if(!Directory.Exists("Export"))
+            {
+                Directory.CreateDirectory("Export");
+            }
+            Database.DB.WriteLua(@"Export\");
+            //Database.DB.WriteCon("D:/");
         }
 
         private void button6_Click(object sender, EventArgs e)
